@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Emergency Resource Coordination System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Emergency Resource Coordination System</h1>
+    <nav style="text-align:center; margin-bottom:20px;">
+        <a href="index.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">Manage Resources & Requests</a>
+        <a href="availability.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">View Shelter Availability</a>
+    </nav>
+
+    <!-- Form to Add/Edit a Resource -->
+    <div class="form-container">
+        <h2 id="formTitle">Add New Resource</h2>
+        <form id="resourceForm">
+            <input type="hidden" id="resourceId">
+
+            <label>Resource Type:</label>
+            <input type="text" id="resourceType" required>
+
+            <label>Quantity Available:</label>
+            <input type="number" id="quantityAvailable" required>
+
+            <label>Unit:</label>
+            <input type="text" id="unit" required>
+
+            <label>Location:</label>
+            <input type="text" id="location" required>
+
+            <label>Status:</label>
+            <select id="status" required>
+                <option value="AVAILABLE">Available</option>
+                <option value="LOW">Low</option>
+                <option value="DEPLETED">Depleted</option>
+            </select>
+
+            <button type="submit" id="submitBtn">Add Resource</button>
+            <button type="button" id="cancelBtn" style="display:none;">Cancel</button>
+        </form>
+    </div>
+
+    <!-- Table to Display Resources -->
+    <div class="table-container">
+        <h2>Current Resources</h2>
+        <table id="resourceTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Quantity</th>
+                    <th>Unit</th>
+                    <th>Location</th>
+                    <th>Status</th>
+                    <th>Last Updated</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="resourceTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Form to Create a Request -->
+    <div class="form-container">
+        <h2>Create New Request</h2>
+        <form id="requestForm">
+            <label>Resource ID (see table above):</label>
+            <input type="number" id="reqResourceId" required>
+
+            <label>Requested By:</label>
+            <input type="text" id="requestedBy" required>
+
+            <label>Quantity Needed:</label>
+            <input type="number" id="quantityNeeded" required>
+
+            <label>Urgency:</label>
+            <select id="urgency" required>
+                <option value="LOW">Low</option>
+                <option value="MEDIUM">Medium</option>
+                <option value="HIGH">High</option>
+                <option value="CRITICAL">Critical</option>
+            </select>
+
+            <button type="submit">Submit Request</button>
+        </form>
+    </div>
+
+    <!-- Table to Display Requests -->
+    <div class="table-container">
+        <h2>Requests</h2>
+        <table id="requestTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Requested By</th>
+                    <th>Resource</th>
+                    <th>Qty Needed</th>
+                    <th>Urgency</th>
+                    <th>Status</th>
+                    <th>Request Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="requestTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Form to Add a Shelter -->
+    <div class="form-container">
+        <h2>Add New Shelter</h2>
+        <form id="shelterForm">
+            <label>Shelter Name:</label>
+            <input type="text" id="shelterName" required>
+
+            <label>Location:</label>
+            <input type="text" id="shelterLocation" required>
+
+            <label>Capacity:</label>
+            <input type="number" id="capacity" required>
+
+            <label>Current Occupancy:</label>
+            <input type="number" id="occupancy" required>
+
+            <button type="submit">Add Shelter</button>
+        </form>
+    </div>
+
+    <!-- Table to Display Shelters -->
+    <div class="table-container">
+        <h2>Shelters</h2>
+        <table id="shelterTable">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Location</th>
+                    <th>Capacity</th>
+                    <th>Occupancy</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="shelterTableBodyAdmin">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shelter Availability</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Shelter Availability</h1>
+    <nav style="text-align:center; margin-bottom:20px;">
+        <a href="index.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">Manage Resources & Requests</a>
+        <a href="availability.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">View Shelter Availability</a>
+    </nav>
+    <p style="text-align:center; color:#cfd8dc;">Public view — no login required. Refresh to see the latest availability.</p>
+
+    <div class="table-container">
+        <table id="shelterTable">
+            <thead>
+                <tr>
+                    <th>Shelter Name</th>
+                    <th>Location</th>
+                    <th>Capacity</th>
+                    <th>Occupancy</th>
+                    <th>Spots Available</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="shelterTableBody">
+            </tbody>
+        </table>
+    </div>
+
+    <script src="availability.js"></script>
+</body>
+</html>
