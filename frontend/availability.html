@@ -12,7 +12,7 @@
         <a href="index.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">Manage Resources & Requests</a>
         <a href="availability.html" style="color:#fff; margin:0 15px; text-decoration:none; font-weight:bold;">View Shelter Availability</a>
     </nav>
-    <p style="text-align:center; color:#cfd8dc;">Public view — no login required. Refresh to see the latest availability.</p>
+    <p style="text-align:center; color:#cfd8dc;">Check current shelter availability, or add a new shelter below.</p>
 
     <div class="table-container">
         <table id="shelterTable">
@@ -29,6 +29,26 @@
             <tbody id="shelterTableBody">
             </tbody>
         </table>
+    </div>
+
+    <!-- Form to Add a Shelter -->
+    <div class="form-container">
+        <h2>Add New Shelter</h2>
+        <form id="shelterForm">
+            <label>Shelter Name:</label>
+            <input type="text" id="shelterName" required>
+
+            <label>Location:</label>
+            <input type="text" id="shelterLocation" required>
+
+            <label>Capacity:</label>
+            <input type="number" id="capacity" required>
+
+            <label>Current Occupancy:</label>
+            <input type="number" id="occupancy" required>
+
+            <button type="submit">Add Shelter</button>
+        </form>
     </div>
 
     <script src="availability.js"></script>

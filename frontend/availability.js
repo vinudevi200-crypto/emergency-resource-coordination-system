@@ -27,3 +27,31 @@ function renderShelterTable(shelters) {
         shelterTableBody.appendChild(row);
     });
 }
+
+const shelterForm = document.getElementById("shelterForm");
+
+shelterForm.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const shelterData = {
+        name: document.getElementById("shelterName").value,
+        location: document.getElementById("shelterLocation").value,
+        capacity: parseInt(document.getElementById("capacity").value),
+        occupancy: parseInt(document.getElementById("occupancy").value)
+    };
+
+    fetch(SHELTER_API_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(shelterData)
+    })
+    .then(response => {
+        if (!response.ok) return response.json().then(err => { throw new Error(err.message); });
+        return response.json();
+    })
+    .then(() => {
+        shelterForm.reset();
+        loadShelters();
+    })
+    .catch(error => alert("Error adding shelter: " + error.message));
+});
